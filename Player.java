@@ -1,42 +1,44 @@
-package µÚ¶ş´Îjava×÷Òµ;
+package ç¬¬äºŒæ¬¡javaä½œä¸š;
 
 import java.util.Scanner;
 public class Player{
-	private int score;
-	private int guess;
+	private int score;     //ç©å®¶çš„åˆ†æ•°
+	private int guess;     //ç©å®¶è‡ªå·±çŒœæµ‹çš„æ•°å­—
 	static Scanner sc = new Scanner(System.in);
 	
 	Player(){
 		score =0;guess =0;
 	}
 	
-	public static void isEqual(Player p, int a, int b) {
+	public static void isEqual(Player p, int a, int b) {  //åˆ¤æ–­ç©å®¶çŒœæµ‹çš„æ•°å­—ä¸éšæœºç”Ÿæˆçš„æ•°å­—æ˜¯å¦ç›¸ç­‰
 		if(a==b) p.score ++;		
 	}
 	
-	private static void max(int i, int j, int k) {
-	if(i ==j && j==k) {System.out.println("Æ½¾Ö"); return;}
+	private static void max(int i, int j, int k) {       //å¯¹ä¸‰ä¸ªç©å®¶è¿›è¡Œæœ€ç»ˆçš„åˆ¤å®š
+		
+		
+	if(i ==j && j==k) {System.out.println("å¹³å±€"); return;}
 	if(i>j) {
 		if(i == k) {
-			System.out.println("Íæ¼ÒÒ»ÓëÍæ¼ÒÈı·ÖÊıÏàÍ¬");
+			System.out.println("ç©å®¶ä¸€ä¸ç©å®¶ä¸‰åˆ†æ•°ç›¸åŒ");
 		}else if(i>k){
-			System.out.println("Íæ¼ÒÒ»Ê¤³ö");
+			System.out.println("ç©å®¶ä¸€èƒœå‡º");
 		}else if(i<k) {
-			System.out.println("Íæ¼ÒÈıÊ¤³ö");
+			System.out.println("ç©å®¶ä¸‰èƒœå‡º");
 		}
 	}else if(i<j){
 		if(j ==k) {
-			System.out.println("Íæ¼Ò¶şÓëÍæ¼ÒÈı·ÖÊıÏàÍ¬");
+			System.out.println("ç©å®¶äºŒä¸ç©å®¶ä¸‰åˆ†æ•°ç›¸åŒ");
 		}else if(j>k) {
-			System.out.println("Íæ¼Ò¶şÊ¤³ö");
+			System.out.println("ç©å®¶äºŒèƒœå‡º");
 		}else if(j<k) {
-			System.out.println("Íæ¼ÒÈıÊ¤³ö");
+			System.out.println("ç©å®¶ä¸‰èƒœå‡º");
 		}
 	}else if(i==j) {
 		if(i>k) {
-			System.out.println("Íæ¼ÒÒ»ÓëÍæ¼Ò¶ş·ÖÊıÏàÍ¬");
+			System.out.println("ç©å®¶ä¸€ä¸ç©å®¶äºŒåˆ†æ•°ç›¸åŒ");
 		}else {
-			System.out.println("Íæ¼ÒÈıÊ¤³ö");
+			System.out.println("ç©å®¶ä¸‰èƒœå‡º");
 		}
 		
 	}
@@ -48,7 +50,7 @@ public class Player{
 		p[1] = new Player();
 		p[2] = new Player();
 		
-		System.out.print("ÇëÊäÈëÓÎÏ·µÄ´ÎÊı£º");
+		System.out.print("è¯·è¾“å…¥æ¸¸æˆçš„æ¬¡æ•°ï¼š");
 		int n = sc.nextInt();
 		
 		for(int j=0; j<n; j++) {
@@ -56,14 +58,14 @@ public class Player{
 //			System.out.println(num);
 			
 			for(int i=0;i<3;i++) {
-				System.out.print("Íæ¼Ò"+(i+1)+":");
+				System.out.print("ç©å®¶"+(i+1)+":");
 				p[i].guess = sc.nextInt();
-				isEqual( p[i],num,p[i].guess);  //ÅĞ¶ÏÍæ¼ÒÊ±ºò²ÂÖĞËæ»úÊı£¬Èç¹û²ÂÖĞ·ÖÊı¾Í¼ÓÒ»
+				isEqual( p[i],num,p[i].guess);  //åˆ¤æ–­ç©å®¶æ—¶å€™çŒœä¸­éšæœºæ•°ï¼Œå¦‚æœçŒœä¸­åˆ†æ•°å°±åŠ ä¸€
 			}
 			
 			System.out.println(p[0].score +" "+p[1].score +" "+p[2].score);
 		}
-		max(p[0].score,p[1].score,p[2].score);  //ÅĞ¶ÏÄÄ¸öÍæ¼ÒµÄ·ÖÊı¸ß
+		max(p[0].score,p[1].score,p[2].score);  //åˆ¤æ–­å“ªä¸ªç©å®¶çš„åˆ†æ•°é«˜
 	}
 }
 
